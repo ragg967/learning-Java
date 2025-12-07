@@ -1,2 +1,2 @@
 default:
-	mvn compile && mvn exec:java -Dexec.mainClass="dev.rye.App"
+	mvn -q compile && mvn -q exec:java -Dexec.mainClass="dev.rye.App"
