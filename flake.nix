@@ -18,6 +18,7 @@
           jdt-language-server
           google-java-format # for formatting
           checkstyle
+          maven
         ];
 
         shellHook = ''
