@@ -14,7 +14,9 @@ public class App {
     // Store normalized version to avoid repeating the operation
     String normalized = conversion.toLowerCase().strip().replaceAll("\\s+", "");
 
-    if(normalized.contains("f->c")){}
+    if(normalized.contains("f->c")){
+
+    }
 
     scanner.close();
   }
