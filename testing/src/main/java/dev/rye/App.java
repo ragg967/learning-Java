@@ -14,10 +14,25 @@ public class App {
     // Store normalized version to avoid repeating the operation
     String normalized = conversion.toLowerCase().strip().replaceAll("\\s+", "");
 
-    if(normalized.contains("f->c")){
-
+    if(!hasBeenConverted && normalized.contains("f->c")){
+      System.out.print("How hot in F?: ");
+      double temperature = scanner.nextDouble();
+      double convertedTemperature = temperature * 1.80 + 32;
+      System.out.printf("%.5f F is %.5f C\n", temperature, convertedTemperature);
+      hasBeenConverted = true;
     }
 
+    if(!hasBeenConverted && normalized.contains("c->f")){
+      System.out.print("How hot in C?: ");
+      double temperature = scanner.nextDouble();
+      double convertedTemperature = (temperature - 32) / 11.8;
+      System.out.printf("%.5f C is %.5f F\n", temperature, convertedTemperature);
+      hasBeenConverted = true;
+    }
+
+    if (hasBeenConverted) {
+
+    }
     scanner.close();
   }
 }
