@@ -17,22 +17,23 @@ public class App {
     if(!hasBeenConverted && normalized.contains("f->c")){
       System.out.print("How hot in F?: ");
       double temperature = scanner.nextDouble();
-      double convertedTemperature = temperature * 1.80 + 32;
-      System.out.printf("%.5f F is %.5f C\n", temperature, convertedTemperature);
+      double convertedTemperature = (temperature - 32) / 11.8;
+      System.out.printf("%.2f F is %.2f C\n", temperature, convertedTemperature);
       hasBeenConverted = true;
     }
 
     if(!hasBeenConverted && normalized.contains("c->f")){
       System.out.print("How hot in C?: ");
       double temperature = scanner.nextDouble();
-      double convertedTemperature = (temperature - 32) / 11.8;
-      System.out.printf("%.5f C is %.5f F\n", temperature, convertedTemperature);
+      double convertedTemperature = temperature * 1.80 + 32;
+      System.out.printf("%.2f C is %.2f F\n", temperature, convertedTemperature);
       hasBeenConverted = true;
     }
 
-    if (hasBeenConverted) {
-
+    if (!hasBeenConverted) {
+      System.out.printf("Error: unable to convert %s\n", conversion);
     }
+
     scanner.close();
   }
 }
